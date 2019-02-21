@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One|Montserrat|Tangerine" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alyssa Geoffray</title>
+</head>
+
+<style>
+    html {
+        font-size: 1rem;
+    }
+
+    @include media-breakpoint-up(sm) {
+        html {
+            font-size: 1.2rem;
+        }
+        #alyssaImage {
+            width: 40%;
+        }
+        .borderImg {
+            width: 150px;
+        }
+    }
+
+    @include media-breakpoint-up(md) {
+        html {
+            font-size: 1.4rem;
+        }
+        .borderImg {
+            width: 150px;
+        }
+    }
+
+    @include media-breakpoint-up(lg) {
+        html {
+            font-size: 1.6rem;
+        }
+        .borderImg {
+            width: 150px;
+        }
+    }
+
+    .mini {
+        font-size: 10px;
+    }
+
+
+    /* <!-- Index Styles --> */
+
+
+
+    * {
+        box-sizing: border-box;
+        background: url('https://i.imgur.com/LwphXQj.jpg') center fixed;
+        background-size: cover;
+        /* text-align: center; */
+        /* font-family: 'Poppins', sans-serif; */
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .borderImg {
+        height: 10%;
+        width: 70%;
+    }
+
+    .diviDiv {
+        margin-top: 50px;
+    }
+
+    #nameHeader {
+        color: #5e1347;
+        background: #ffffff;
+        border: 2px ridge #6b0f4f;
+        padding: 5px;
+        float: left;
+        border-bottom-width: 6px;
+        border-bottom-style: double;
+        text-align: right;
+        width: 100%;
+
+    }
+
+    #name {
+        font-family: 'Julius Sans One', sans-serif;
+        background: white;
+        float: right;
+        margin-right: 10%;
+    }
+
+    .tag {
+        color: purple;
+        font-family: 'Julius Sans One', sans-serif;
+        padding: 2%;
+        margin: 2%;
+        text-align: center;
+    }
+
+    #alyssaImage {
+        width: 35%;
+    }
+
+
+
+    /* Navigation Bar */
+
+
+    .navigation {
+        float: right;
+        width: 100%;
+        background: #5e1347;
+        padding: 2%;
+        margin: .5%;
+        /* font-size: 20px; */
+        /* text-align: right; */
+    }
+
+
+    .button {
+        float: right;
+        text-align: right;
+        width: 200px;
+        border-style: ridge;
+        margin: 2px;
+        padding: 5px;
+        background: #6d4461;
+        color: #c0a5b7;
+        border-color: rgb(54, 50, 50);
+    }
+
+    #btnRow {
+        margin-right: 8%;
+    }
+
+    .button:hover {
+        background: #dd93c7;
+        font-size: 20px;
+        color: grey;
+        cursor: -webkit-grab;
+    }
+
+
+
+
+
+/* <!-- ABOUT ME SECTION --> */
+
+#paragrapharea {
+    overflow: auto;
+    font-size: 14px;
+    padding: 10%;
+    border-style: inset;
+    border-width: 2px;
+    width: 80%;
+    border-color: #dddddd;
+}
+
+@media screen and (max-width: 768px) {
+    #paragrapharea { 
+    width: 90%;
+    margin: 0; }
+
+}
+
+#alyssaImage {
+    word-wrap: normal;
+    overflow: auto;
+    padding: 20px;
+    width: 40%;
+}
+
+p {
+    font-weight: 300;
+    line-height: 35px;
+    /* font-size: 18px; */
+    color: #777777;
+}
+
+
+
+
+
+
+/*PORTFOLIO SECTION*/
+
+
+
+
+
+
+
+
+#para {
+    float: left;
+    width: 960px;
+    margin-left: 17.5%;
+    margin-right: 17.5%;
+    margin-top: 20px;
+    border: 4px ridge #f7e6f1;
+    background-color: #ffffff;
+    padding: 2px;
+}
+
+.lastPortfolioRow {
+    margin-bottom: 25px;
+}
+
+@media screen and (max-width: 768px) {
+    #para {
+    float: left; 
+    width: 100%;
+    margin: 0; }
+    .col {
+        width: 20%;
+    }
+}
+
+.portpic {
+    /* float: left; */
+    height: 300px;
+    width: 300px;
+    overflow: auto;
+    padding: 20px;
+    border-style: solid;
+    border-color: #5e1347;
+    border-top-right-radius: 23%;
+}
+@media screen and (max-width: 768px) {
+    .portpic {
+margin-left: 2px;
+    float: left;
+    height: 80px;
+    width: 80px; }
+}
+
+.wording {
+    float: left;
+    width: 260px;
+    text-align: center;
+    height: 25px;
+    padding-bottom: 8px;
+    padding-left: 2px;
+    line-height: 80%;
+    font-size: 14px;
+    border-left-style: ridge;
+    border-color: #4aaaa5;
+}
+@media screen and (max-width: 768px) {
+    .wording {
+        width: 90px;
+        font-size: 10px;
+        }
+    .mini {
+        font-size: 8px;
+        width: 100px;
+    }
+}
+
+.item {
+    float: left;
+    margin-left: 13%;
+    width: 30%;
+    height: 40%;
+    padding-top: 20px;
+    text-align: center;
+    line-height: 90%;
+}
+@media screen and (max-width: 768px) {
+    .item {float: left;
+    width: 130px;
+    height: 130px;
+    margin: 2px;
+    }
+}
+
+.item:hover {
+    opacity: 0.3;
+    background-color: #4aaaa5;
+}
+
+
+
+
+
+
+
+/*CONTACT SECTION*/
+
+
+
+
+
+
+
+/* This is for the contact box */
+
+
+
+
+
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    color: #777777;
+}
+
+input[type=submit] {
+    background: #4aaaa5;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#canadaoption, #usaoption {
+    color: rgb(87, 87, 189);
+    font-weight: bold;
+}
+
+input[type=submit]:hover {
+    background-color:#1d7571;
+    color: #777777;
+}
+
+#contactContainer {
+    border-radius: 5px;
+    border-color: #4aaaa5;
+    border-style: inset;
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+h3 {
+    align: center;
+    color: #4aaaa5;
+}
+
+#Contactme {
+    float: left;
+    text-align: left;
+    width: 960px;
+    margin-left: 17.5%;
+    margin-right: 17.5%;
+   
+}
+
+@media screen and (max-width: 768px) {
+    #Contactme {
+        float: left;
+        width: 100%;
+        margin: 0;
+    }
+}
+
+/*divider between contact form and Alyssa's info*/
+
+#break {
+    float: left;
+    width: 960px;
+    margin-left: 17.5%;
+    margin-right: 17.5%;
+    overflow: auto;
+    border-style: solid;
+    border-color: #4aaaa5;
+    border-width: 5px;
+    padding: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    #break {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+#divider {
+    width: 900px;
+    height: 100px;
+}
+@media screen and (max-width: 768px) {
+    #divider {
+        width: 500px;
+    }
+}
+
+/* This is for Alyssa's contact information */
+
+#MyInfo {
+    float: left;
+    width: 960px;
+    margin-right: 17.5%;
+    margin-left: 17.5%;
+    font-size: 30px;   
+    border-color:#dddddd;
+    border-style: solid;
+    border-right-width: 180px;
+    border-left-width: 180px;
+    border-bottom-width: 40px;
+    border-top-width: 40px;
+    border-bottom-color: #4aaaa5;
+    border-top-color: #4aaaa5;
+}
+@media screen and (max-width: 768px) {
+    #MyInfo {
+        width: 100%;
+        margin: 0;
+        font-size: 14px;
+        border-width: 2px;
+    }
+}
+
+#contactphoto {
+    width: 50%;
+    padding: 3px;
+    border-color: #dddddd;
+}
+@media screen and (max-width: 768px) {
+    #contactphoto {
+        width: 300px;
+    }
+}
+
+
+
+
+
+
+
+
+</style>
+
+<body>
+
+    <header id="nameHeader">
+        <h1 id='name'>Alyssa Geoffray</h1>
+    </header>
+
+
+    <article class="navigation" id='entirenavbar'>
+        <div class="container">
+            <div class="row" id='btnRow'>
+                <div class="col col-md-12">
+                    <a href="#tagContact" class="button" id="buttcontact">Contact</a>
+                    <a href="#tagPortfolio" class="button">Portfolio
+                    </a>
+                    <a href="#tagAbout" class="button">About</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+
+
+    <center>
+
+        <article id="paragrapharea">
+
+            <img src="https://i.imgur.com/A0rQOdZ.jpg" alt="Alyssa Geoffray" id="alyssaImage">
+
+            <h2 class='tag' id='tagAbout'>About</h2>
+
+            <p>Alyssa Geoffray is a student at UC Berkeley, currently seeking a part time position or internship with a
+                progressive company in the SF/Bay area. She aspires to hone her skills as a front-end developer, gain
+                experience,
+                and be an asset to her employer. Alyssa's occupational goal is to contribute to the fields of game
+                design
+                or AI,
+                but she is open to other avenues! Ayssa is studying full-stack development, learning to use
+                applications
+                such as
+                GitHub, Heroku, Visual Studio Code, GitBash, and more. She has been mastering browser based
+                technologies
+                (such as
+                HTML, CSS, JavaScript, and jQuery), databases (MySQL and MongoDB), deployment methods, and server side
+                development with Node.js, Express, and MERN Stack. Upon completion of her course in April, she will be
+                ready to
+                commit to a full-time position.
+                <p>
+                    Alyssa's professional career began at Wilson's Espresso when she was fourteen years old, where she
+                    was
+                    quickly
+                    promoted to assistant manager due to her strong work ethic. Alyssa has a lot of experience working
+                    directly with
+                    customers, from both past careers and volunteer opportunities. She has contributed to several
+                    non-profit
+                    organizations, such as YADA (Youth Activity Development Association), and Urban Corps, a program
+                    dedicated to
+                    helping immigrant youth and low income youth receive education and develop skills through paid job
+                    training.
+                </p>
+                <p>
+                    Alyssa spends her free time painting, reading, writing, hiking with her dog, meditating, or
+                    attending
+                    kundalini
+                    yoga classes. Alyssa is proud of her academic acheivements, such as coming in second place at a
+                    Contra
+                    Costa
+                    spelling bee in 2002, and being named "Artist of the Year" by a local art gallery in 2009. She
+                    maintained all A's
+                    in high school, completing advanced calculus, art, and English courses. Alyssa has plenty of
+                    internal
+                    motivation.
+                    She delights in exceeding expectations and improving herself wherever possible, and works
+                    extraordinarily well
+                    under pressure. Alyssa takes criticism gracefully, embracing it as an opportunity to learn. Ms.
+                    Geoffray is a
+                    very positive and creative person, and she would love an opportunity to work with other creative
+                    minds
+                    in a
+                    stimulating work environment! </p>
+            </p>
+        </article>
+
+
+
+        <article id='portfolioarea'>
+
+            <img class='borderImg' src='https://i.imgur.com/1D8Sn55.png'>
+            <h2 class='tag' id='tagPortfolio'>Portfolio</h2>
+
+            <article id="para">
+                <div class="row">
+                    <div class="col col-lg-12" id="port-col-1">
+                        <div class="item">
+                            <article class="wording" id="thing1">Aquatic Hangman<span class='mini'>[Word Game via js]</span></article>
+                            <a href="https://alyssa-geoffray.github.io/AquaticHangman/Index.html" target="_blank">
+                                <img src="https://i.imgur.com/cFThhhN.png?1" title="Aquatic Hangman" class="portpic" /></a>
+                        </div>
+
+                        <div class="item">
+                            <article class='wording' id='thing2'>Geography Quiz<span class='mini'>[Europe Trivia via
+                                    js]</span></article>
+                            <a href='https://alyssa-geoffray.github.io/EuropeTriviaGame/index.html' target='_blank'>
+                                <img src='https://i.imgur.com/UQva3uj.gif' title='European Trivia Game' class='portpic' />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-lg-12" id="port-col-2">
+                        <div class="item">
+                            <article class="wording" id="thing3">Space Defender <span class='mini'>[Shooter Game via js]</span></article>
+                            <a href="https://alyssa-geoffray.github.io/SpaceDefender/index.html" target="_blank"><img
+                                    src="https://i.imgur.com/DSkEJpm.png?2" title="Interactive Buttons" class="portpic" /></a>
+                        </div>
+                        <div class="item">
+                            <article class="wording" id="thing4">Safari <span class='mini'>[Numbers Game via js]</span></article>
+                            <a href="https://alyssa-geoffray.github.io/Safari/index.html" target="_blank"><img src="https://i.imgur.com/0DE6GTJ.gif?1"
+                                    title="All About Dogs" class="portpic" /></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-lg-12" id="port-col-2">
+                        <div class="item">
+                            <article class="wording" id="thing5">Interactive Box <span class='mini'>['onClick' with
+                                    jQuery]</span></article>
+                            <a href="https://alyssa-geoffray.github.io/InteractiveBox/index.html" target="_blank"><img
+                                    src="https://i.imgur.com/QVTOaR5.png?2" title="Interactive Buttons" class="portpic" /></a>
+                        </div>
+
+                        <!-- <div class="item">
+                    <article class="wording" id="thing6">All About Dogs</article>
+                    <a href="https://ageoffray.github.io/basic_portfolio/assets/portfolio_links/All_About_Dogs.html"
+                        target="_blank"><img src="https://i.imgur.com/JQKgUSY.png?2" title="All About Dogs" class="portpic" /></a>
+                </div> -->
+                        <div class='item'>
+                            <article class="wording" id="thing6">Style Sheet <span class='mini'>[Floating via CSS]</span></article>
+                            <a href="https://alyssa-geoffray.github.io/InteractiveBox/Floats.html" target="_blank"><img
+                                    src="https://i.imgur.com/dJkw1eA.png?2" title="Floats" class="portpic" /></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col col-lg-12" id="port-col-2">
+                        <div class="item">
+                            <article class="wording" id="thing7">Shark Snack <span class='mini'>[PC Game via Scratch]</span></article>
+                            <a href="https://scratch.mit.edu/projects/245428552" target="_blank"><img src="https://i.imgur.com/lZOg4N4.png?1"
+                                    title="Game: Shark Snack" class="portpic lastPortfolioRow" /></a>
+                        </div>
+                        <div class='item' class='lastPortfolioRow'>
+                            <article class="wording" id="thing8">Hovering Hero <span class='mini'>[Platform
+                                    Game via js]</span></article>
+                            <a href="https://alyssa-geoffray.github.io/HoveringHero/index.html" target="_blank"><img
+                                    src="https://i.imgur.com/Jb3zTNi.gif" title="Floats" class="portpic lastPortfolioRow" /></a>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </article>
+
+
+        <div class='diviDiv'>
+            <img class='borderImg' src='https://i.imgur.com/1D8Sn55.png'>
+            <h2 class='tag' id='tagContact'>Contact</h2>
+        </div>
+
+
+        <article id="Contactme">
+
+
+
+
+            <h3>Message Alyssa:</h3>
+
+            <div class="container" id='contactContainer'>
+                <form action="mailto:AlyssaGeoffray@gmail.com" method="POST\">
+                    <label for="fname">Name</label>
+                    <input type="text" id="fname" name="firstname" placeholder="First, Last...">
+
+                    <label for="lname">Location</label>
+                    <input type="text" id="lname" name="lastname" placeholder="City, State...">
+
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="usa" id='usaoption'>USA</option>
+                        <option value="canada" id='canadaoption'>Canada</option>
+                        <br>
+                        <option value='angola'>Angola</option>
+                        <option value='argentina'>Argentina</option>
+                        <option value='australia'>Australia</option>
+                        <option value='austria'>Austria</option>
+                        <option value='belgium'>Belgium</option>
+                        <option value='belarus'>Belarus</option>
+                        <option value='belize'>Belize</option>
+                        <option value='bolivia'>Bolivia</option>
+                        <option value='brazil'>Brazil</option>
+                        <option value='bulgaria'>Bulgaria</option>
+                        <option value="cambodia">Cambodia</option>
+                        <option value='chile'>Chile</option>
+                        <option value='centralafricanrepublic'>Central African Republic</option>
+                        <option value='columbia'>Colombia</option>
+                        <option value='costarica'>Costa Rica</option>
+                        <option value='capeverde'>Cape Verde</option>
+                        <option value='czeckrepublic'>Czech Republic</option>
+                        <option value='cyprus'>Cyprus</option>
+                        <option value='china'>China</option>
+                        <option value='crotia'>Crotia</option>
+                        <option value='denmark'>Denmark</option>
+                        <option value='egypt'>Egypt</option>
+                        <option value='finland'>Finland</option>
+                        <option value='france'>France</option>
+                        <option value='frenchguiana'>French Guiana</option>
+                        <option value='germany'>Germany</option>
+                        <option value='greece'>Greece</option>
+                        <option value='hungary'>Hungary</option>
+                        <option value='india'>India</option>
+                        <option value='italy'>Italy</option>
+                        <option value='japan'>Japan</option>
+                        <option value='kenya'>Kenya</option>
+                        <option value='laos'>Laos</option>
+                        <option value='macedonia'>Macedonia (FYROM)</option>
+                        <option value='malaysia'>Malaysia</option>
+                        <option value="australia">Mexico</option>
+                        <option value='morocco'>Morocco</option>
+                        <option value='netherlands'>Netherlands</option>
+                        <option value='nigeria'>Nigeria</option>
+                        <option value='norway'>Norway</option>
+                        <option value='paraguay'>Paraguay</option>
+                        <option value='peru'>Peru</option>
+                        <option value='philippines'>Philippines</option>
+                        <option value='poland'>Poland</option>
+                        <option value='romania'>Romania</option>
+                        <option value="russia">Russia</option>
+                        <option value='serbia'>Serbia</option>
+                        <option value='suriname'>Suriname</option>
+                        <option value='singapore'>Singapore</option>
+                        <option value='spain'>Spain</option>
+                        <option value='southafrica'>South Africa</option>
+                        <option value='southkorea'>South Korea</option>
+                        <option value='srilanka'>Sri Lanka</option>
+                        <option value='swaziland'>Swaziland</option>
+                        <option value='sweeden'>Sweeden</option>
+                        <option value='switzerland'>Switzerland</option>
+                        <option value='thailand'>Thailand</option>
+                        <option value='ukraine'>Ukraine</option>
+                        <option value='uk'>United Kingdom</option>
+                        <option value='uruguay'>Uruguay</option>
+                        <option value='vaticancity'>Vatican City</option>
+                        <option value='venezuela'>Venezuela</option>
+                        <option value='zambia'>Zambia</option>
+                        <option value='other'>Other</option>
+
+                    </select>
+
+                    <label for="subject">Subject</label>
+                    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                    <input type="submit" value="Submit">
+                </form>
+
+            </div>
+
+        </article>
+
+        <!-- <div id="break">
+            <img src="https://i.imgur.com/v3nzqb6.png" alt=UCBE id="divider">
+        </div> -->
+
+        <article id="MyInfo">
+
+
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/alyssa-geoffray-52038216b" target="_blank">Alyssa
+                    Geoffray</a></p>
+            <img id="contactphoto" src="https://i.imgur.com/WHXC3Qk.jpg?1" title="Alyssa">
+        </article>
+
+        <footer id="feet">
+            alyssageoffray@gmail.com
+        </footer>
+
+    </center>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
