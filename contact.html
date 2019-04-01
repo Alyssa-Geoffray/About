@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron|ZCOOL+XiaoWei" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Alyssa's Contact</title>
+</head>
+
+
+<style>
+    * {
+        font-family: 'orbitron', sans-serif;
+        background: black;
+    }
+        /* html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+    
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        } */
+    
+        .label {
+        color: white;
+        background: black;
+        width: 33.33333%;
+        float: left;
+        font-size: 24px;
+        padding-top: 8%;
+        padding-bottom: 0%;
+    }
+
+    #biolabel:hover {
+        color: rgb(255, 203, 211);
+    }
+
+    #portlabel:hover {
+        color: rgb(170, 238, 170);
+    }
+
+    #contactlabel:hover {
+        color: rgb(159, 211, 241);
+    }
+
+    #back {
+        padding: 1%;
+    }
+
+
+/* <!-- CONTACT STYLE --> */
+
+#contactContainer, form {
+    width: 40%;
+    margin-left: 55%;
+    margin-right: 5%;
+    float: left;
+    padding: 10px;
+}
+
+label {
+    color: rgb(213, 253, 213);
+
+}
+
+input {
+    color: rgb(237, 252, 237);
+    padding: 5px;
+    }
+
+#subjectq {
+    color: rgb(237, 252, 237);
+}
+
+#submitbtn:hover {
+    background: rgb(237, 252, 237);
+    color: rgb(59, 15, 59);
+}
+
+
+    </style>
+
+
+<body>
+
+    <center>
+        <header id='back'>
+            <a href='index.html'>Clear</a>
+        </header>
+    </center>
+
+
+    <center>
+        <a href='bio.html' id='biolabel' class='label'>Bio</a>
+        <a href='port.html' id='portlabel' class='label'>Port</a>
+        <a href='contact.html' id='contactlabel' class='label'>Contact</a>
+    </center>
+
+
+    <div class="container" id='contactContainer'>
+        <form action="mailto:AlyssaGeoffray@gmail.com" method="POST\">
+            <label for="nameq">Name</label>
+            <input type="text" id="nameq" name="nameq" placeholder="First, Last...">
+
+            <label for="emailq">Email</label>
+            <input type="text" id="emailq" name="emailq" placeholder="City, State...">
+
+            <!-- <label for="country">Country</label>
+                        <select id="country" name="country">
+                            <option value="usa" id='usaoption'>USA</option>
+                            <option value="canada" id='canadaoption'>Canada</option>
+                            <br>
+                            <option value='angola'>Angola</option>
+                            <option value='argentina'>Argentina</option>
+                            <option value='australia'>Australia</option>
+                            <option value='austria'>Austria</option>
+                            <option value='belgium'>Belgium</option>
+                            <option value='belarus'>Belarus</option>
+                            <option value='belize'>Belize</option>
+                            <option value='bolivia'>Bolivia</option>
+                            <option value='brazil'>Brazil</option>
+                            <option value='bulgaria'>Bulgaria</option>
+                            <option value="cambodia">Cambodia</option>
+                            <option value='chile'>Chile</option>
+                            <option value='centralafricanrepublic'>Central African Republic</option>
+                            <option value='columbia'>Colombia</option>
+                            <option value='costarica'>Costa Rica</option>
+                            <option value='capeverde'>Cape Verde</option>
+                            <option value='czeckrepublic'>Czech Republic</option>
+                            <option value='cyprus'>Cyprus</option>
+                            <option value='china'>China</option>
+                            <option value='crotia'>Crotia</option>
+                            <option value='denmark'>Denmark</option>
+                            <option value='egypt'>Egypt</option>
+                            <option value='finland'>Finland</option>
+                            <option value='france'>France</option>
+                            <option value='frenchguiana'>French Guiana</option>
+                            <option value='germany'>Germany</option>
+                            <option value='greece'>Greece</option>
+                            <option value='hungary'>Hungary</option>
+                            <option value='india'>India</option>
+                            <option value='italy'>Italy</option>
+                            <option value='japan'>Japan</option>
+                            <option value='kenya'>Kenya</option>
+                            <option value='laos'>Laos</option>
+                            <option value='macedonia'>Macedonia (FYROM)</option>
+                            <option value='malaysia'>Malaysia</option>
+                            <option value="australia">Mexico</option>
+                            <option value='morocco'>Morocco</option>
+                            <option value='netherlands'>Netherlands</option>
+                            <option value='nigeria'>Nigeria</option>
+                            <option value='norway'>Norway</option>
+                            <option value='paraguay'>Paraguay</option>
+                            <option value='peru'>Peru</option>
+                            <option value='philippines'>Philippines</option>
+                            <option value='poland'>Poland</option>
+                            <option value='romania'>Romania</option>
+                            <option value="russia">Russia</option>
+                            <option value='serbia'>Serbia</option>
+                            <option value='suriname'>Suriname</option>
+                            <option value='singapore'>Singapore</option>
+                            <option value='spain'>Spain</option>
+                            <option value='southafrica'>South Africa</option>
+                            <option value='southkorea'>South Korea</option>
+                            <option value='srilanka'>Sri Lanka</option>
+                            <option value='swaziland'>Swaziland</option>
+                            <option value='sweeden'>Sweeden</option>
+                            <option value='switzerland'>Switzerland</option>
+                            <option value='thailand'>Thailand</option>
+                            <option value='ukraine'>Ukraine</option>
+                            <option value='uk'>United Kingdom</option>
+                            <option value='uruguay'>Uruguay</option>
+                            <option value='vaticancity'>Vatican City</option>
+                            <option value='venezuela'>Venezuela</option>
+                            <option value='zambia'>Zambia</option>
+                            <option value='other'>Other</option>
+    
+                        </select>
+     -->
+            <label for="subjectq">Subject</label>
+            <textarea id="subjectq" name="subjectq" placeholder="Write something.." style="height:200px"></textarea>
+
+            <input type="submit" id='submitbtn' value="Submit">
+        </form>
+    </div>
+
+
+
+
+</body>
+
+</html>
