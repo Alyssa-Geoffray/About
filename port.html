@@ -4,80 +4,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron|ZCOOL+XiaoWei" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Sawarabi+Mincho|Shadows+Into+Light" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Alyssa's Port</title>
+    <title>Port</title>
 </head>
-
 
 <style>
     * {
-        font-family: 'orbitron', sans-serif;
         background: black;
     }
 
-    /* html,
-    body {
-        height: 100%;
-        margin: 0;
-        overflow: hidden;
-    }
-
-    canvas {
+    #fullDirectory {
         width: 100%;
-        height: 100%;
-        display: block;
-    } */
-
-    .label {
-        color: white;
-        background: black;
-        width: 33.33333%;
         float: left;
-        font-size: 24px;
-        padding-top: 8%;
-        padding-bottom: 0%;
     }
 
-    #biolabel:hover {
-        color: rgb(255, 203, 211);
+
+    #homeImg {
+        height: 80px;
     }
 
-    #portlabel:hover {
-        color: rgb(170, 238, 170);
+    .dir {
+        width: 20%;
+        margin-top: 5%;
+        float: left;
+        background: black;
+        color: rgb(252, 235, 235);
+        font-family: 'shadows into light', cursive;
+        font-size: 25px;
+        text-decoration: none;
     }
 
-    #contactlabel:hover {
-        color: rgb(159, 211, 241);
+    .dir:hover {
+        color: rgb(190, 226, 236);
+        font-family: 'cinzel', cursive;
     }
 
-    #back {
-        padding: 1%;
+    #portDir {
+        font-family: 'cinzel', cursive;
+        width: 20%;
+        margin-top: 5%;
+        float: left;
+        background: black;
+        color: rgb(147, 200, 214);
+        font-size: 30px;
+        text-decoration: none;
     }
 
     /* PORT STYLES */
-
-
     .portpic {
         /* float: left; */
-        height: 60px;
-        width: 60px;
+        height: 70px;
+        width: 70px;
         overflow: auto;
         padding: 20px;
-        border-style: solid;
-        border-color: #f0afdc;
+        border: 2px ridge rgb(147, 200, 214);
         background: black;
         border-top-right-radius: 23%;
     }
 
-
-
+    /* <!-- To put all items on one row, use width: 12.5% for two rows use 25% --> */
     .item {
         float: left;
-        width: 12.5%;
+        width: 25%;
         height: 15%;
         padding-top: 20px;
-
+        margin-bottom: 20px;
         text-align: center;
         line-height: 90%;
         background: black;
@@ -85,97 +77,139 @@
         color: rgb(178, 240, 178);
     }
 
-
     .portpic:hover {
-        opacity: 0.3;
-
+        /* opacity: 0.3; */
+        background: rgb(190, 226, 236);
     }
+
+    #paraOne, #paraTwo {
+       width: 100%;
+       height: 16%;
+       float: left;
+       margin-bottom: 1%;
+    }
+
+    .portLabel {
+        font-family: 'Sawarabi Mincho', cursive;
+        text-decoration: none;
+        font-size: 14px; 
+        color: rgb(190, 226, 236);
+    }
+
+    .miniLabel {
+        font-size: 11px;
+        color: rgb(227, 190, 236);
+    }
+
+    .starImg {
+        width: 20px;
+    }
+
+    .starTxt {
+        font-size: 12px;
+        color: rgb(220, 203, 236);
+    }
+
 </style>
+
 
 
 <body>
 
-    <center>
-        <header id='back'>
-            <a href='index.html'>Clear</a>
-        </header>
-    </center>
 
-    <center>
-        <a href='bio.html' id='biolabel' class='label'>Bio</a>
-        <a href='port.html' id='portlabel' class='label'>Port</a>
-        <a href='contact.html' id='contactlabel' class='label'>Contact</a>
-    </center>
+
+
 
     <center>
 
+        <!-- DIRECTORY -->
+
+        <div id='fullDirectory'>
+            <a class='dir' href='index.html'><img id='homeImg' src='https://i.imgur.com/xsbA3St.jpg'></a>
+            <a class='dir' href="bio.html">Bio</a>
+            <div id='portDir'>Port</div>
+            <a class='dir' href="ref.html">Referrals</a><a class='dir' href="contact.html">Contact</a>
+        </div>
+
+
+        <!-- PORTFOLIO LINKS -->
 
         <article id='portfolioarea'>
 
-            <article id="para">
+            <article id="paraOne">
 
                 <div class="item">
-                    <!-- <article class="wording" id="thing1">Aquatic Hangman<span class='mini'>[Word Game via js]</span></article> -->
                     <a href="https://alyssa-geoffray.github.io/AquaticHangman/Index.html" target="_blank">
-                        <img src="https://i.imgur.com/cFThhhN.png?1" title="Aquatic Hangman" class="portpic" /></a>
+                        <img src="https://i.imgur.com/cFThhhN.png?1" title="Aquatic Hangman" class="portpic" />
+                        <div class='portLabel'>Aquatic Hangman <span class='miniLabel'>| Underwater Terms with JS</span></div>
+                        <div class='starTxt'><img src='https://i.imgur.com/33EZHBO.png' class='starImg'>Recommended</div>
+                    </a>
                 </div>
 
                 <div class="item">
-                    <!-- <article class='wording' id='thing2'>Geography Quiz<span class='mini'>[Europe Trivia via
-                                    js]</span></article> -->
                     <a href='https://alyssa-geoffray.github.io/EuropeTriviaGame/index.html' target='_blank'>
                         <img src='https://i.imgur.com/UQva3uj.gif' title='European Trivia Game' class='portpic' />
+                        <div class='portLabel'>Europe Trivia Game <span class='miniLabel'>| Timed Quiz with JS</span></div>
                     </a>
                 </div>
 
 
                 <div class="item">
-                    <!-- <article class="wording" id="thing3">Space Defender <span class='mini'>[Shooter Game via
-                                    js]</span></article> -->
                     <a href="https://alyssa-geoffray.github.io/SpaceDefender/index.html" target="_blank"><img src="https://i.imgur.com/DSkEJpm.png?2"
-                            title="Space Defender, Shooter Game" class="portpic" /></a>
+                            title="Space Defender, Shooter Game" class="portpic" />
+                            <div class='portLabel'>Space Defender <span class='miniLabel'>| Shooter Game</span></div>
+                            <div class='starTxt'><img src='https://i.imgur.com/33EZHBO.png' class='starImg'>Recommended</div>
+                        </a>
                 </div>
 
                 <div class="item">
-                    <!-- <article class="wording" id="thing4">Safari <span class='mini'>[Numbers Game via js]</span></article> -->
                     <a href="https://alyssa-geoffray.github.io/Safari/index.html" target="_blank"><img src="https://i.imgur.com/0DE6GTJ.gif?1"
-                            title="Safari Numbers Game" class="portpic" /></a>
+                            title="Safari Numbers Game" class="portpic" />
+                            <div class='portLabel'>Safari <span class='miniLabel'>| Numbers Game</span></div>
+                        </a>
                 </div>
+            </article>
 
+            <br>
+
+
+            <article id='paraTwo'>
 
                 <div class="item">
-                    <!-- <article class="wording" id="thing5">Interactive Box <span class='mini'>['onClick' with
-                                    jQuery]</span></article> -->
                     <a href="https://alyssa-geoffray.github.io/InteractiveBox/index.html" target="_blank"><img src="https://i.imgur.com/cGZFBST.jpg"
-                            title="Interactive Buttons" class="portpic" /></a>
+                            title="Interactive Buttons" class="portpic" />
+                            <div class='portLabel'>Interactive Buttons <span class='miniLabel'>| Fun with jQuery</span></div>
+                        </a>
                 </div>
 
                 <div class='item'>
-                    <!-- <article class="wording" id="thing6">Style Sheet <span class='mini'>[Floating via CSS]</span></article> -->
                     <a href="https://alyssa-geoffray.github.io/InteractiveBox/Floats.html" target="_blank"><img src="https://i.imgur.com/dJkw1eA.png?2"
-                            title="Floating via CSS" class="portpic" /></a>
+                            title="Floating via CSS" class="portpic" />
+                            <div class='portLabel'>Float Structures <span class='miniLabel'>| Floating via CSS</span></div>
+                        </a>
                 </div>
 
 
 
                 <div class="item">
-                    <!-- <article class="wording" id="thing7">Shark Snack <span class='mini'>[PC Game via Scratch]</span></article> -->
                     <a href="https://scratch.mit.edu/projects/245428552" target="_blank"><img src="https://i.imgur.com/lZOg4N4.png?1"
-                            title="Scratch Game: Shark Snack" class="portpic lastPortfolioRow" /></a>
+                            title="Scratch Game: Shark Snack" class="portpic lastPortfolioRow" />
+                            <div class='portLabel'>Shark Snack <span class='miniLabel'>| Scratch Game</span></div>
+                        </a>
                 </div>
 
                 <div class='item' class='lastPortfolioRow'>
-                    <!-- <article class="wording" id="thing8">Hovering Hero <span class='mini'>[Platform
-                                    Game via js]</span></article> -->
                     <a href="https://alyssa-geoffray.github.io/HoveringHero/index.html" target="_blank"><img src="https://i.imgur.com/Jb3zTNi.gif"
-                            title="Hovering Hero, Platform Game" class="portpic lastPortfolioRow" /></a>
+                            title="Hovering Hero, Platform Game" class="portpic lastPortfolioRow" />
+                            <div class='portLabel'>Hovering Hero <span class='miniLabel'>| Helicopter Style Platform Game</span></div>
+                            <div class='starTxt'><img src='https://i.imgur.com/33EZHBO.png' class='starImg'>Recommended</div>
+                        </a>
                 </div>
-
 
             </article>
         </article>
 
-
+        <!-- <img src='https://i.imgur.com/kVeHiQB.png' id='globeImg'> -->
 
 
 
@@ -184,62 +218,6 @@
 
 
 
-
-
-
-    <!-- <script src="js/three.js"></script>
-    <script src='js/three.min.js'></script>
-
-    <script>
-
-        var scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(60, 1, 1, 1000);
-        camera.position.set(0, -5, 20);
-        var renderer = new THREE.WebGLRenderer({
-            antialias: true
-        });
-        var canvas = renderer.domElement;
-        document.body.appendChild(canvas);
-
-        var box = new THREE.Mesh(new THREE.BoxBufferGeometry(), new THREE.MeshNormalMaterial());
-        box.geometry.translate(0, 0, 0.5);
-        box.scale.set(1, 1, 3);
-        scene.add(box);
-
-        var plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -10);
-        var raycaster = new THREE.Raycaster();
-        var mouse = new THREE.Vector2();
-        var pointOfIntersection = new THREE.Vector3();
-        canvas.addEventListener("mousemove", onMouseMove, false);
-
-        function onMouseMove(event) {
-            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-            mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
-            raycaster.setFromCamera(mouse, camera);
-            raycaster.ray.intersectPlane(plane, pointOfIntersection);
-            box.lookAt(pointOfIntersection);
-        }
-
-        renderer.setAnimationLoop(() => {
-            if (resize(renderer)) {
-                camera.aspect = canvas.clientWidth / canvas.clientHeight;
-                camera.updateProjectionMatrix();
-            }
-            renderer.render(scene, camera);
-        });
-
-        function resize(renderer) {
-            const canvas = renderer.domElement;
-            const width = canvas.clientWidth;
-            const height = canvas.clientHeight;
-            const needResize = canvas.width !== width || canvas.height !== height;
-            if (needResize) {
-                renderer.setSize(width, height, false);
-            }
-            return needResize;
-        }
-
-    </script> -->
 
 
 </body>
