@@ -1,112 +1,303 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Orbitron|ZCOOL+XiaoWei" rel="stylesheet">
+    <meta charset="utf-8">
     <title>Alyssa Geoffray</title>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel|Shadows+Into+Light" rel="stylesheet">
 </head>
 
 <style>
-    html,
-    body {
-        height: 100%;
-        margin: 0;
-        overflow: hidden;
-    }
-
-    canvas {
-        width: 100%;
-        height: 100%;
-        display: block;
-    }
-
-    .label {
-        color: white;
+    * {
         background: black;
-        width: 33.33333%;
+    }
+
+    #fullDirectory {
+        width: 100%;
         float: left;
-        font-size: 24px;
-        padding-top: 10%;
-        padding-bottom: 0%;
-        font-family: 'Orbitron', sans-serif;
     }
 
-    #biolabel:hover {
-        color: rgb(255, 203, 211);
+    .dir {
+        width: 25%;
+        margin-top: 5%;
+        float: left;
+        background: black;
+        color: rgb(252, 235, 235);
+        font-family: 'shadows into light', cursive;
+        font-size: 25px;
     }
 
-    #portlabel:hover {
-        color: rgb(170, 238, 170);
+    .dir:hover {
+        color: rgb(190, 226, 236);
+        font-family: 'cinzel', cursive;
     }
-
-    #contactlabel:hover {
-        color: rgb(159, 211, 241);
-    }
-
 </style>
 
 <body>
+
     <center>
-        <a href='bio.html' id='biolabel' class='label'>Bio</a>
-        <a href='port.html' id='portlabel' class='label'>Port</a>
-        <a href='contact.html' id='contactlabel' class='label'>Contact</a>
+
+        <div id='fullDirectory'>
+            <a class='dir' href="bio.html">Bio</a>
+            <a class='dir' href="port.html">Port</a>
+            <a class='dir' href="ref.html">Referrals</a><a class='dir' href="contact.html">Contact</a>
+        </div>
+
     </center>
+
 
 
     <script src="js/three.js"></script>
     <script src='js/three.min.js'></script>
+    <script src="js/BufferGeometryLoader.js"></script>
+
 
     <script>
 
-        var scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(60, 1, 1, 1000);
-        camera.position.set(0, -3, 20);
-        var renderer = new THREE.WebGLRenderer({
-            antialias: true
-        });
-        var canvas = renderer.domElement;
-        document.body.appendChild(canvas);
 
-        var box = new THREE.Mesh(new THREE.BoxBufferGeometry(), new THREE.MeshNormalMaterial());
-        box.geometry.translate(0, 0, 0.5);
-        box.scale.set(2, 2, 7);
-        scene.add(box);
+        let scene = new THREE.Scene()
 
-        var plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), -10);
-        var raycaster = new THREE.Raycaster();
-        var mouse = new THREE.Vector2();
-        var pointOfIntersection = new THREE.Vector3();
-        canvas.addEventListener("mousemove", onMouseMove, false);
+        // making a camera
+        let camera = new THREE.PerspectiveCamera(40, window.innerWidth / window.innerHeight, 10, 1000);
 
+        camera.position.z = 100;
+        camera.position.y = 10;
+
+
+
+        // making the renderer
+        let renderer = new THREE.WebGLRenderer()
+
+        // creating textures for eyeballs
+        THREE.ImageUtils.crossOrigin = '*';
+
+        let wrapper = new THREE.Object3D;
+        // let wrapper: THREE.Object3D = new THREE.Object3D;
+
+
+        let textureloader = new THREE.TextureLoader();
+
+
+
+        // loading textures for eyeballs
+        const normalEye = textureloader.load('https://s3-us-west-2.amazonaws.com/interaktiv-codepen-assets/Eye_N.jpg');
+        const normal = textureloader.load('https://s3-us-west-2.amazonaws.com/interaktiv-codepen-assets/Eye_D2.jpg');
+
+        // setting size
+        renderer.setSize(window.innerWidth, window.innerHeight)
+
+        // adding canvas to dom
+        document.body.appendChild(renderer.domElement)
+
+
+
+        ///////// creating lights /////////
+
+        // one light
+        let light = new THREE.DirectionalLight(0xffffff, 1.0)
+        light.position.set(100, 100, 100)
+        scene.add(light)
+
+        // another light
+        let light2 = new THREE.DirectionalLight(0xffffff, 1.0)
+        light2.position.set(-100, 100, -100)
+        scene.add(light2)
+
+
+        /////// creating variables for each piece of the skull ///////
+
+        let rightEye = THREE.Mesh;
+        let leftEye = THREE.Mesh;
+        let head = THREE.Mesh;
+        let jaw = THREE.Mesh;
+
+        // let rightEye: THREE.Mesh;
+        // let leftEye: THREE.Mesh;
+        // let head: THREE.Mesh;
+        // let jaw: THREE.Mesh
+
+
+        // creating a timer (optional, for "biting" skull animation)
+        let timer;
+
+        const loader = new THREE.BufferGeometryLoader;
+        // const loader: THREE.BufferGeometryLoader = new THREE.BufferGeometryLoader();
+
+        // here we are loading materials, etc for our head
+        loader.load(
+            'https://s3-us-west-2.amazonaws.com/interaktiv-codepen-assets/head.json',
+            function (geometry) {
+
+                var material = new THREE.MeshLambertMaterial({ color: 0xFFFFFF });
+                head = new THREE.Mesh(geometry, material);
+                wrapper.add(head);
+
+            }
+        )
+
+        // here we load materials, etc for our jaw
+        loader.load(
+            'https://s3-us-west-2.amazonaws.com/interaktiv-codepen-assets/jaw.json',
+            function (geometry) {
+
+                var material = new THREE.MeshLambertMaterial({ color: 0xFFFFFF });
+                /*Reposition axis for jaw*/
+                geometry.computeBoundingBox();
+                const geodepth = geometry.boundingBox.max.z - geometry.boundingBox.min.z;
+
+                jaw = new THREE.Mesh(geometry, material);
+                jaw.geometry.translate(0, 0, geodepth / 2);
+                jaw.position.z = -geodepth / 2;
+
+                wrapper.add(jaw);
+            }
+        );
+
+
+        // here we load materials, etc for our eyeballs
+        loader.load(
+            // resource URL
+            'https://s3-us-west-2.amazonaws.com/interaktiv-codepen-assets/eyeball.json',
+            // Function when resource is loaded
+            function (geometry) {
+
+                geometry.center();
+
+                const mat = new THREE.MeshPhongMaterial({
+                    map: normal,
+                    color: 0xf2f2f2,
+                    normalMap: normalEye,
+                    specular: 0xffffff,
+                    shininess: 100
+                })
+                leftEye = new THREE.Mesh(geometry, mat);
+
+                leftEye.position.x = -5.2;
+                leftEye.position.y = 3.4;
+                leftEye.position.z = 1.65;
+
+                wrapper.add(leftEye);
+
+                rightEye = new THREE.Mesh(geometry, mat);
+                rightEye.position.x = 5.2;
+                rightEye.position.y = 3.4;
+                rightEye.position.z = 1.65;
+                wrapper.add(rightEye);
+            }
+        );
+
+
+        // Adding a wrapper object 
+        scene.add(wrapper);
+
+        // Here we are creating a hidden plane to register mouse cords
+        const planeGeometry = new THREE.PlaneGeometry(1000, 1000, 10, 10);
+        const material = new THREE.MeshBasicMaterial({ color: 0xFF0000, visible: false });
+        const hiddenPlane = new THREE.Mesh(planeGeometry, material);
+
+        // setting position beetween camera and eyes
+        hiddenPlane.position.set(0, 0, 50);
+
+        scene.add(hiddenPlane);
+
+
+        // declaring mouse 2d position
+        let mouse = new THREE.Vector2(0, 0);
+
+        // declaring 3d post to follow
+        let point = new THREE.Vector3(0, 0, 0);
+
+        const raycaster = new THREE.Raycaster();
+
+        camera.lookAt(scene.position)
+
+        window.addEventListener('mousemove', onMouseMove, false);
+        window.addEventListener('resize', onWindowResize, false)
+
+
+        //////// Setting timer for head 'Bite' animation ////////
+        // ---> NOTE: We are NOT using this feature now, but we can turn it on if we want
+        this.timer = setTimeout(() => bite(), 5000);
+
+
+        // function for animation
+        function bite() {
+
+            // get snapshot of current mouse postion
+            let target = new THREE.Vector3();
+            target.copy(point);
+
+            TweenMax.to(jaw.rotation, .2, { x: 0.5 });
+            TweenMax.to(jaw.rotation, .1, { x: 0, delay: .2 });
+            TweenMax.to(wrapper.position, .2, { x: target.x, y: target.y, z: target.z, repeat: 1, yoyo: true });
+
+            let randomDelay = 2000 + Math.ceil(Math.random() * 10000);
+            timer = setTimeout(() => bite(), randomDelay);
+        }
+
+        // creating a function that sets the camera in the cursor !
         function onMouseMove(event) {
+
+            // Update the mouse variable
+            event.preventDefault();
+
             mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
             mouse.y = - (event.clientY / window.innerHeight) * 2 + 1;
+
             raycaster.setFromCamera(mouse, camera);
-            raycaster.ray.intersectPlane(plane, pointOfIntersection);
-            box.lookAt(pointOfIntersection);
+            var intersects = raycaster.intersectObject(hiddenPlane);
+
+            if (intersects.length > 0) {
+                point = intersects[0].point;
+
+            }
+        };
+
+        // function to automatically adjust canvas with window size
+        function onWindowResize() {
+
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
         }
 
-        renderer.setAnimationLoop(() => {
-            if (resize(renderer)) {
-                camera.aspect = canvas.clientWidth / canvas.clientHeight;
-                camera.updateProjectionMatrix();
+        // function to generate & animate skull
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        // function animate(): void {
+        // 	requestAnimationFrame(animate)
+        // 	render()
+        // }
+
+        // function to adjust eyes with camera in cursor point
+        function render() {
+            if (rightEye && leftEye) {
+                rightEye.lookAt(point);
+                leftEye.lookAt(point);
+                wrapper.lookAt(point);
             }
             renderer.render(scene, camera);
-        });
-
-        function resize(renderer) {
-            const canvas = renderer.domElement;
-            const width = canvas.clientWidth;
-            const height = canvas.clientHeight;
-            const needResize = canvas.width !== width || canvas.height !== height;
-            if (needResize) {
-                renderer.setSize(width, height, false);
-            }
-            return needResize;
         }
+
+        // function render(): void {
+
+        //     if(rightEye && leftEye){
+
+        //         rightEye.lookAt( point );
+        //         leftEye.lookAt( point);
+        //         wrapper.lookAt( point);
+
+        //     }
+
+        // 	renderer.render(scene, camera)
+        // }
+
+        // call animate function to generate 3D objects
+        animate();
+
 
     </script>
 
