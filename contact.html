@@ -60,47 +60,22 @@
 }
 
 form {
-    border: 1px ridge rgb(190, 226, 236);
-    padding: 12px;
-    background: url("https://i.imgur.com/ZI9znbA.jpg");
-    /* background-size: cover; */
+    height: 450px;
+    background: url('https://i.imgur.com/r1a85Z1.png');
+    background-size: cover; 
 }
 
-label {
-    color: rgb(190, 226, 236);
-    width: 90%;
-    font-family: 'cinzel', cursive;
-    font-size: 18px;
-    background: none;
-
-}
-
-input {
+.conBtn {
     color: rgb(252, 235, 235);
     padding: 5px;
-    width: 90%;
-    font-family: 'Sawarabi Mincho', cursive;
     font-size: 18px;
     border: 2px ridge rgb(190, 226, 236);
-    }
-
-#subjectq {
-    color: rgb(252, 235, 235);
-    width: 90%;
-    font-family: 'Sawarabi Mincho', cursive;
-    font-size: 18px;
-    border: 2px ridge rgb(190, 226, 236);
-    background: black;
-
-}
-
-#submitbtn {
-    width: 18%;
     margin: 10px;
     font-family: 'shadows into light', cursive;
+    text-decoration: none;
+    margin-top: 170px;
 }
-
-#submitbtn:hover {
+.conBtn:hover {
     background: rgb(237, 252, 237);
     color: rgb(59, 15, 59);
 }
@@ -126,18 +101,14 @@ input {
 
         <!-- Contact Form -->
 
-        <div class="container" id='contactContainer'>
-            <form action="mailto:AlyssaGeoffray@gmail.com" method="POST\">
-                <label for="nameq">Name</label><br>
-                <input type="text" id="nameq" name="nameq" placeholder="First, Last..."><br>
 
-                <label for="emailq">Email</label><br>
-                <input type="text" id="emailq" name="emailq" placeholder="City, State..."><br>
-                <label for="subjectq">Subject</label><br>
-                <textarea id="subjectq" name="subjectq" placeholder="Write something.." style="height:200px"></textarea><br>
+        <div class='container' id='contactContainer'>
 
-                <input type="submit" id='submitbtn' value="Submit"><br>
+            <form action='mailto:AlyssaGeoffray@gmail.com' method='POST'>
+                    <a class='conBtn' href='https://www.linkedin.com/in/alyssa-geoffray-52038216b/' target="_blank">LinkedIn</a>
+                    <input type='submit' id='submitbtn' class='conBtn' value='AlyssaGeoffray@gmail.com'><br>
             </form>
+
         </div>
 
 
